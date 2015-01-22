@@ -1,0 +1,10 @@
+---
+- name: Add the agent to the {{ dynatrace_java_agent_env_var_name }} environment variable definition in file {{ dynatrace_java_agent_env_var_file_name }}
+  lineinfile: >
+    dest={{ dynatrace_java_agent_env_var_file_name }}
+    regexp='export {{ dynatrace_java_agent_env_var_name }}="\${{ dynatrace_java_agent_env_var_name }} {{ dynatrace_java_agent_agentpath_string }}"'
+    line='export {{ dynatrace_java_agent_env_var_name }}="${{ dynatrace_java_agent_env_var_name }} {{ dynatrace_java_agent_agentpath_string }}"'
+    insertbefore=BOF
+    state=present
+    create=yes
+  sudo: yes
