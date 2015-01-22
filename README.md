@@ -25,7 +25,7 @@ java Foo
 
 The role is available via:
 
-- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/)
+- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/2653)
 - [GitHub](https://github.com/Dynatrace/Dynatrace-Java-Agent-Ansible)
 
 ## Requirements
