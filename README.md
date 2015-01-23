@@ -49,7 +49,7 @@ As defined in ```defaults/main.yml```:
 | *dynatrace_java_agent_collector_hostname*  | localhost                                | The location of the collector the Agent shall connect to. |
 | *dynatrace_java_agent_collector_port*      | 9998                                     | The port on the collector the Agent shall connect to. |
 | *dynatrace_java_agent_linux_agent_path*    | /opt/dynatrace/agent/lib64/libdtagent.so | The path to the Agent libary. |
-| *dynatrace_java_agent_state*               | present                                  | Whether the agent shall be ```present``` or ```absent```. |
+| *dynatrace_java_agent_state*               | present                                  | Whether the Agent shall be ```present``` or ```absent```. |
 
 ## Example Playbook
 
