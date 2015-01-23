@@ -43,10 +43,11 @@ As defined in ```defaults/main.yml```:
 |--------------------------------------------|------------------------------------------|-------------|
 | *dynatrace_java_agent_env_var_name*        | JAVA_OPTS                                | The name of the environment variable to be used for Agent injection. |
 | **dynatrace_java_agent_env_var_file_name** |                                          | The name of the file to be modified. |
-| *dynatrace_java_agent_name*                | java-agent                               | The name of the Java Agent as it appears in Dynatrace. |
+| *dynatrace_java_agent_name*                | java-agent                               | The name of the Agent as it appears in Dynatrace. |
 | *dynatrace_java_agent_collector_hostname*  | localhost                                | The location of the collector the Agent shall connect to. |
 | *dynatrace_java_agent_collector_port*      | 9998                                     | The port on the collector the Agent shall connect to. |
 | *dynatrace_java_agent_linux_agent_path*    | /opt/dynatrace/agent/lib64/libdtagent.so | The path to the Agent libary. |
+| *dynatrace_java_agent_state*               | present                                  | Whether the agent shall be ```present``` or ```absent```. |
 
 ## Example Playbook
 

@@ -5,6 +5,6 @@
     regexp='export {{ dynatrace_java_agent_env_var_name }}="\${{ dynatrace_java_agent_env_var_name }} {{ dynatrace_java_agent_agentpath_string }}"'
     line='export {{ dynatrace_java_agent_env_var_name }}="${{ dynatrace_java_agent_env_var_name }} {{ dynatrace_java_agent_agentpath_string }}"'
     insertbefore=BOF
-    state=present
+    state={{ dynatrace_java_agent_state }}
     create=yes
   sudo: yes
