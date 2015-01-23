@@ -4,6 +4,8 @@ An [Ansible](http://www.ansible.com) role for automated deployments of the [Dyna
 
 This role makes the Java Agent available to a Java Virtual Machine by injecting an *-agentpath* option into the ```JAVA_OPTS``` (or any other) environment variable in a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process is executed.
 
+**Note**: You have to restart your application after placing the agent.
+
 **Note**: Currently, we support only Linux hosts, support for installing Windows hosts is in the making.
 
 ## Example
