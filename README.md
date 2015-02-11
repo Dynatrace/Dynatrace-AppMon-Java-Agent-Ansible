@@ -2,7 +2,7 @@
 
 An [Ansible](http://www.ansible.com) role for automated deployments of the [Dynatrace](http://www.bit.ly/dttrial) Java Agent.
 
-This role makes the Java Agent available to a Java Virtual Machine by injecting an *-agentpath* option into the ```JAVA_OPTS``` (or any other) environment variable in a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process is executed.
+This role makes the Java Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. *Please note that this role might need some tweaking to fit your particular use-case.*
 
 **Note**: You have to restart your application after placing the agent.
 
