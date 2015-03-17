@@ -41,22 +41,22 @@ This roles requires an installation of the Dynatrace Agents package, which is pr
 
 As defined in ```defaults/main.yml```:
 
-| Name                                       | Default                                  | Description |
-|--------------------------------------------|------------------------------------------|-------------|
-| *dynatrace_java_agent_env_var_name*        | JAVA_OPTS                                | The name of the environment variable to be used for Agent injection. |
-| **dynatrace_java_agent_env_var_file_name** |                                          | The name of the file to be modified. |
-| *dynatrace_java_agent_name*                | java-agent                               | The name of the Agent as it appears in Dynatrace. |
-| *dynatrace_java_agent_collector_hostname*  | localhost                                | The location of the collector the Agent shall connect to. |
-| *dynatrace_java_agent_collector_port*      | 9998                                     | The port on the collector the Agent shall connect to. |
-| *dynatrace_java_agent_linux_agent_path*    | /opt/dynatrace/agent/lib64/libdtagent.so | The path to the Agent libary. |
-| *dynatrace_java_agent_state*               | present                                  | Whether the Agent shall be ```present``` or ```absent```. |
+| Name                                      | Default                                  | Description |
+|-------------------------------------------|------------------------------------------|-------------|
+| *dynatrace_java_agent_env_var_name*       | JAVA_OPTS                                | The name of the environment variable to be used for Agent injection. |
+| *dynatrace_java_agent_env_var_file_name*  |                                          | The name of the file to be modified. |
+| *dynatrace_java_agent_name*               | java-agent                               | The name of the Agent as it appears in Dynatrace. |
+| *dynatrace_java_agent_collector_hostname* | localhost                                | The location of the collector the Agent shall connect to. |
+| *dynatrace_java_agent_collector_port*     | 9998                                     | The port on the collector the Agent shall connect to. |
+| *dynatrace_java_agent_linux_agent_path*   | /opt/dynatrace/agent/lib64/libdtagent.so | The path to the Agent libary. |
+| *dynatrace_java_agent_state*              | present                                  | Whether the Agent shall be ```present``` or ```absent```. |
 
 ## Example Playbook
 
 	- hosts: all
 	  roles:
-	    - { role: Dynatrace-Agents }
-	    - { role: Dynatrace-Java-Agent, dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh }
+	    - role: dynatrace.Dynatrace-Java-Agent
+	      dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh
 
 ## Additional Resources
 
