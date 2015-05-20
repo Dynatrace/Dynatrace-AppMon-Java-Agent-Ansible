@@ -2,11 +2,7 @@
 
 An [Ansible](http://www.ansible.com) role for automated deployments of the [Dynatrace](http://www.bit.ly/dttrial) Java Agent.
 
-This role makes the Java Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. *Please note that this role might need some tweaking to fit your particular use-case.*
-
-**Note**: You have to restart your application after placing the agent.
-
-**Note**: Currently, we support only Linux hosts, support for installing Windows hosts is in the making.
+This role makes the Java Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. Please note that this role might need some tweaking to fit your particular use-case. **You will have to restart your application after placing the agent.**
 
 ## Example
 
@@ -30,12 +26,11 @@ The role is available via:
 - [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/2653)
 - [GitHub](https://github.com/Dynatrace/Dynatrace-Java-Agent-Ansible)
 
-## Requirements
+## Dependencies
 
-This roles requires an installation of the Dynatrace Agents package, which is provided by the following roles:
+This roles depends on the following roles:
 
 - [Dynatrace-Agents](https://galaxy.ansible.com/list#/roles/2620)
-- [Dynatrace-Server](https://galaxy.ansible.com/list#/roles/2623)
 
 ## Role Variables
 
@@ -60,9 +55,12 @@ As defined in ```defaults/main.yml```:
 
 ## Additional Resources
 
+- [Blog: How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
+- [Blog: How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
 - [Slide Deck: Automated Deployments](http://slideshare.net/MartinEtmajer/automated-deployments-slide-share)
-- [Slide Deck: Introduction to Automated Deployments with Ansible](http://www.slideshare.net/MartinEtmajer/introduction-to-automated-deployments-with-ansible)
-- [Tutorials: Automated Deployments with Dynatrace and Ansible](https://community.compuwareapm.com/community/display/COE/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
+- [Slide Deck: Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Slide Deck: Testing Ansible Roles with Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
+- [Tutorials: Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/COE/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
 
 ## Questions?
 
