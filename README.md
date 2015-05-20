@@ -53,6 +53,23 @@ As defined in ```defaults/main.yml```:
 	    - role: dynatrace.Dynatrace-Java-Agent
 	      dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh
 
+## Testing
+
+We use [Test Kitchen](http://kitchen.ci) to automatically test our automated deployments with [Serverspec](http://serverspec.org):
+
+1) Install Kitchen and its dependencies from within the project's directory:
+
+```
+gem install bundler
+bundle install
+```
+
+2) Run tests
+
+```
+kitchen test
+```
+
 ## Additional Resources
 
 - [Blog: How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
