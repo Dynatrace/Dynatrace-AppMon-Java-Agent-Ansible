@@ -1,6 +1,7 @@
 ---
 dynatrace_java_agent_env_var_name: JAVA_OPTS
 dynatrace_java_agent_env_var_file_name: 
+dynatrace_java_agent_env_var_file_insert_after: BOF
 
 dynatrace_java_agent_name: java-agent
 dynatrace_java_agent_collector_hostname: localhost
