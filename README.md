@@ -1,8 +1,8 @@
 # Dynatrace-Java-Agent-Ansible
 
-An [Ansible](http://www.ansible.com) role for automated deployments of the [Dynatrace](http://www.bit.ly/dttrial) Java Agent.
+This Ansible role installs and configures the Dynatrace Agent of the [Dynatrace Application Monitoring](http://www.dynatrace.com/en/products/application-monitoring.html) solution for a Java process.
 
-This role makes the Java Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. Please note that this role might need some tweaking to fit your particular use-case. **You will have to restart your application after placing the agent.**
+**Note**: this role makes the Dynatrace Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. **You will have to restart your application after placing the agent.**
 
 ## Example
 
@@ -49,41 +49,52 @@ As defined in ```defaults/main.yml```:
 
 ## Example Playbook
 
-	- hosts: all
-	  roles:
-	    - role: dynatrace.Dynatrace-Java-Agent
-	      dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh
-	      dynatrace_java_agent_env_var_file_insert_after: '#!/bin/sh'
+```
+- hosts: all
+  roles:
+    - role: dynatrace.Dynatrace-Java-Agent
+      dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh
+      dynatrace_java_agent_env_var_file_insert_after: '#!/bin/sh'
+```
 
 ## Testing
 
-We use [Test Kitchen](http://kitchen.ci) to automatically test our automated deployments with [Serverspec](http://serverspec.org):
+We use [Test Kitchen](http://kitchen.ci) to automatically test our automated deployments with [Serverspec](http://serverspec.org) and [RSpec](http://rspec.info/):
 
-1) Install Kitchen and its dependencies from within the project's directory:
+1) Install Test Kitchen and its dependencies from within the project's directory:
 
 ```
 gem install bundler
 bundle install
 ```
 
-2) Run tests
+2) Run all tests
 
 ```
 kitchen test
 ```
 
+By default, we run our tests inside [Docker](https://www.docker.com/) containers as this considerably speeds up testing time (see `.kitchen.yml`).
+
 ## Additional Resources
 
-- [Blog: How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
-- [Blog: How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
-- [Slide Deck: Automated Deployments](http://slideshare.net/MartinEtmajer/automated-deployments-slide-share)
-- [Slide Deck: Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
-- [Slide Deck: Testing Ansible Roles with Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
-- [Tutorials: Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/LEARN/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
+### Blogs
+
+- [How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
+- [How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
+
+### Presentations
+
+- [Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Test-Driven Infrastructure with Ansible, Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
+
+### Tutorials
+
+- [Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/LEARN/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
 
 ## Questions?
 
-Feel free to post your questions on the Dynatrace Community's [Continuous Delivery Forum](https://community.dynatrace.com/community/pages/viewpage.action?pageId=46628921).
+Feel free to post your questions on the Dynatrace Community's [Continuous Delivery Forum](https://answers.dynatrace.com/spaces/148/open-q-a_2.html?topics=continuous%20delivery).
 
 ## License
 
