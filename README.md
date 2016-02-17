@@ -30,7 +30,7 @@ The role is available via:
 
 This roles depends on the following roles:
 
-- [Dynatrace-Agents](https://galaxy.ansible.com/list#/roles/5320)
+- [Dynatrace-Agent](https://galaxy.ansible.com/list#/roles/5320)
 
 ## Role Variables
 
@@ -52,7 +52,7 @@ As defined in ```defaults/main.yml```:
 ```
 - hosts: all
   roles:
-    - role: dynatrace.Dynatrace-Java-Agent
+    - role: Dynatrace.Dynatrace-Java-Agent
       dynatrace_java_agent_env_var_file_name: /usr/bin/run-foo.sh
       dynatrace_java_agent_env_var_file_insert_after: '#!/bin/sh'
 ```
