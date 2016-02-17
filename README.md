@@ -23,14 +23,14 @@ java Foo
 
 The role is available via:
 
-- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/5327)
+- [Ansible Galaxy](https://galaxy.ansible.com/Dynatrace/Dynatrace-Java-Agent)
 - [GitHub](https://github.com/Dynatrace/Dynatrace-Java-Agent-Ansible)
 
 ## Dependencies
 
 This roles depends on the following roles:
 
-- [Dynatrace-Agent](https://galaxy.ansible.com/list#/roles/5320)
+- [Dynatrace-Agent](https://galaxy.ansible.com/Dynatrace/Dynatrace-Agent)
 
 ## Role Variables
 
