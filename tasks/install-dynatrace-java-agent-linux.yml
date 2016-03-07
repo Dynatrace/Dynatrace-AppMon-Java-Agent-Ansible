@@ -8,4 +8,4 @@
     state: "{{ dynatrace_java_agent_state }}"
     create: yes
     backup: yes
-  sudo: yes
+  become: yes
