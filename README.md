@@ -1,8 +1,8 @@
 # Dynatrace-Java-Agent-Ansible
 
-This Ansible role installs and configures the Dynatrace Agent of the [Dynatrace Application Monitoring](http://www.dynatrace.com/en/products/application-monitoring.html) solution for a Java process.
+This Ansible role installs and configures the Dynatrace AppMon Agent of the [Dynatrace AppMon](https://www.dynatrace.com/support/doc/appmon/) solution for a Java process.
 
-**Note**: this role makes the Dynatrace Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. **You will have to restart your application after placing the agent.**
+**Note**: this role makes the Dynatrace AppMon Agent available to a Java Virtual Machine by injecting an appropriate *-agentpath* option into an environment variable, e.g. ```JAVA_OPTS```, inside a file (typically an executable script). It is assumed that this script either executes the Java process directly or is sourced by another script before the Java process gets executed. **You will have to restart your application after placing the agent.**
 
 ## Example
 
@@ -41,7 +41,7 @@ As defined in ```defaults/main.yml```:
 | *dynatrace_java_agent_env_var_name*              | JAVA_OPTS                                | The name of the environment variable to be used for Agent injection. |
 | *dynatrace_java_agent_env_var_file_name*         | **required**                             | The name of the file to be modified. |
 | *dynatrace_java_agent_env_var_file_insert_after* | BOF                                      | A regex, BOF or EOF for *begin-of-file* and *end-of-file*, respectively. If a given regex is not matched, the *-agentpath* option will be appended to the file. |
-| *dynatrace_java_agent_name*                      | java-agent                               | The name of the Agent as it appears in Dynatrace. |
+| *dynatrace_java_agent_name*                      | java-agent                               | The name of the Agent as it appears in Dynatrace AppMon. |
 | *dynatrace_java_agent_collector_hostname*        | localhost                                | The location of the collector the Agent shall connect to. |
 | *dynatrace_java_agent_collector_port*            | 9998                                     | The port on the collector the Agent shall connect to. |
 | *dynatrace_java_agent_linux_agent_path*          | /opt/dynatrace/agent/lib64/libdtagent.so | The path to the Agent libary. |
@@ -85,7 +85,7 @@ By default, we run our tests inside [Docker](https://www.docker.com/) containers
 
 ### Presentations
 
-- [Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Automated Deployments (of Dynatrace AppMon) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
 - [Test-Driven Infrastructure with Ansible, Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
 
 ## Problems? Questions? Suggestions?
